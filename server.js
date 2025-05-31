@@ -15,7 +15,7 @@ const countRoutes = require("./routes/countRoute");
 
 // CORS configuration
 const corsOptions = {
-  origin: "https://tourmaline-malasada-08e671.netlify.app", // Replace with your Netlify frontend URL
+  origin: "https://https://pmodashboard.netlify.app", // Replace with your Netlify frontend URL
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization", "X-User-Email"],
   credentials: true,
