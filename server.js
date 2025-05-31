@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const authRoutes = require("./routes/authRoute"); // Correct path to your routes file
-const indicatorRoutes = require("./routes/indicatorROute");
+const indicatorRoutes = require("./routes/indicatorRoute");
 const graphRoutes = require("./routes/graphRoute");
 const excelRoutes = require("./routes/excelRoute"); // Correct path to your routes file
 require("dotenv").config(); // Make sure dotenv is correctly required
