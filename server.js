@@ -17,7 +17,7 @@ const countRoutes = require("./routes/countRoute");
 const corsOptions = {
   origin: "https://gentle-zabaione-679b14.netlify.app", // Replace with your Netlify frontend URL
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"],
+  allowedHeaders: ["Content-Type", "Authorization", "X-User-Email"],
   credentials: true,
 };
 
