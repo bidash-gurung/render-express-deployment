@@ -14,21 +14,8 @@ const dataRoutes = require("./routes/previewRoute");
 const countRoutes = require("./routes/countRoute");
 
 // CORS configuration
-const allowedOrigins = [
-  "https://gentle-zabaione-679b14.netlify.app", // Existing allowed origin
-  "https://tourmaline-malasada-08e671.netlify.app", // New allowed origin
-  // Add more origins as needed
-];
-
 const corsOptions = {
-  origin: function (origin, callback) {
-    // Allow requests with no origin (like mobile apps or Postman)
-    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
+  origin: "https://gentle-zabaione-679b14.netlify.app", // Replace with your Netlify frontend URL
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization", "X-User-Email"],
   credentials: true,
@@ -46,7 +33,9 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads"))); // Serve f
 
 // API Routes
 app.use("/api", authRoutes); // Register routes with the "/api" prefix
+// app.use("/api/excel", excelRoutes);
 app.use("/api", excelRoutes);
+
 app.use("/api/indicators", indicatorRoutes);
 app.use("/api", graphRoutes);
 app.use("/api", userDataRoutes);
