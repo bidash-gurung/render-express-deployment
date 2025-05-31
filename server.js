@@ -13,8 +13,19 @@ const notificationRoutes = require("./routes/notificationRoute");
 const dataRoutes = require("./routes/previewRoute");
 const countRoutes = require("./routes/countRoute");
 
-// Middleware
-app.use(cors()); // Enable cross-origin resource sharing
+// CORS configuration
+const corsOptions = {
+  origin: "https://gentle-zabaione-679b14.netlify.app", // Replace with your Netlify frontend URL
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true,
+};
+
+// Apply CORS middleware
+app.use(cors(corsOptions)); // Enable cross-origin resource sharing
+// Handle preflight requests
+app.options("*", cors(corsOptions));
+
 app.use(bodyParser.json()); // Parse incoming JSON requests
 
 // Serve static files (uploads)
